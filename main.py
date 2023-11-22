@@ -30,7 +30,7 @@ screen.onkey(leftPaddle.moveDown, "s")
 
 gameIsOn = True
 while gameIsOn:
-    time.sleep(0.069)
+    time.sleep(ball.movementSpeed)
     screen.update()
     ball.move()
     # Detect collision with paddles

@@ -13,6 +13,7 @@ class Ball(Turtle):
         self.xMovement = 10
         self.yMovement = 10
         self.movementDirection = 1
+        self.movementSpeed = 0.069
     
     def move(self):
         new_x = self.xcor() + self.xMovement * self.movementDirection
@@ -30,5 +31,6 @@ class Ball(Turtle):
     def reset(self):
         self.goto(0,0)
         self.movementDirection *= -1
+        self.movementSpeed *= 0.9
         self.move()
         
