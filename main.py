@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -13,6 +14,7 @@ rightPaddle = Paddle((350,0))
 leftPaddle = Paddle((-350,0))
 
 ball = Ball()
+scoreboard = Scoreboard()
 
 rightPaddleScore = 0
 leftPaddleScore = 0
@@ -38,10 +40,12 @@ while gameIsOn:
     # Right paddle miss
     if ball.xcor() > 400:
         rightPaddleScore += 1
+        scoreboard.lPoint()
         ball.reset()
     # Left paddle miss
     elif ball.xcor() < -400:
         leftPaddleScore += 1
+        scoreboard.rPoint()
         ball.reset()
 
 screen.exitonclick()
